@@ -16,7 +16,7 @@ On souhaite également gérer des identifiants uniques.
 ID(String nomCategorie)
 ID(int numeroSerie)
 int get()
-```
+```
 
 
 ## Client
@@ -30,7 +30,7 @@ String nom;
 String email;
 
 Client(String prenom, String nom, String email)
-```
+```
 
 ## Produit
 
@@ -39,7 +39,8 @@ ID numeroSerie;
 Date dateEntree;
 
 Produit(ID numeroSerie)
-```
+```
+
 
 ## Stock
 
@@ -61,7 +62,7 @@ Produit prendUnProduit()
 Produit produitVendu;
 
 Vente(Stock s)
-```
+```
 
 
 ## Panier
@@ -76,6 +77,7 @@ double valeurTotale;
 Panier(Client acheteur)
 void enregistreAchat(Vente achat)
 ```
+
 
 ## Magasin
 
