@@ -59,9 +59,8 @@ Produit prendUnProduit()
 
 ```
 Produit produitVendu;
-Stock stockOrigine;
 
-Vente(Stock s, Client c)
+Vente(Stock s)
 ```
 
 
