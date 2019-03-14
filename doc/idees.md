@@ -6,3 +6,4 @@
 - [ ] soldes
 - [ ] marques et catégories
 - [ ] gestion automatique des stocks
+- [ ] persistence données
