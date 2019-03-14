@@ -12,7 +12,7 @@ On souhaite également gérer des identifiants uniques.
 
 > Un objet pour gérer des identifiants uniques.
 
-```
+```java
 ID(String nomCategorie)
 ID(int numeroSerie)
 int get()
@@ -22,7 +22,7 @@ int get()
 ## Client
 
 
-```
+```java
 ID id;
 Date creation;
 String prenom;
@@ -34,7 +34,7 @@ Client(String prenom, String nom, String email)
 
 ## Produit
 
-```
+```java
 ID numeroSerie;
 Date dateEntree;
 
@@ -44,7 +44,7 @@ Produit(ID numeroSerie)
 
 ## Stock
 
-```
+```java
 long codeBarre;
 double prix;
 double tva; // Peut être specifique au produit
@@ -58,7 +58,7 @@ Produit prendUnProduit()
 
 ## Vente
 
-```
+```java
 Produit produitVendu;
 
 Vente(Stock s)
@@ -67,7 +67,7 @@ Vente(Stock s)
 
 ## Panier
 
-```
+```java
 ID id;
 Date dateDeVente;
 Client acheteur;
@@ -83,7 +83,7 @@ void enregistreAchat(Vente achat)
 
 > Représente le magasin avec ses stocks, ventes et clients
 
-```
+```java
 List<Client> clients;
 List<Panier> paniers;
 List<Stock> stocks;
