@@ -19,7 +19,7 @@ int get()
 ```
 
 
-## Client
+## Client
 
 
 ```
@@ -69,7 +69,7 @@ Vente(Stock s)
 
 ```
 ID id;
-Date dateDeVente;
+Date dateDeVente;
 Client acheteur;
 List<Vente> achats;
 double valeurTotale;
@@ -83,7 +83,7 @@ void enregistreAchat(Vente achat)
 
 > Représente le magasin avec ses stocks, ventes et clients
 
-```
+```
 List<Client> clients;
 List<Panier> paniers;
 List<Stock> stocks;
@@ -92,4 +92,4 @@ Magasin()
 void enregistreClient(Client c)
 void ajoutePanier(Panier p)
 void ajouteStock(Stock s)
-```
+```
