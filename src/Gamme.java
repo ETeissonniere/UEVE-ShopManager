@@ -9,13 +9,13 @@ public class Gamme {
     public List<Produit> stock;
     public List<Produit> vendu;
 
-    public Gamme(Lond codeBarre, Double prix, Double tva) {
+    public Gamme(Long codeBarre, Double prix, Double tva) {
         this.codeBarre = codeBarre;
         this.prix = prix;
         this.tva = tva;
 
         this.stock = new ArrayList<Produit>();
-        this.vendu = new ArrayList<Produit>():
+        this.vendu = new ArrayList<Produit>();
     }
 
     public void enregistreProduit(Produit p) {
