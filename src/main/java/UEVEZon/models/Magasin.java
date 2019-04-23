@@ -1,34 +1,36 @@
+package UEVEZon.models;
+
 import java.sql.*;
 
 public class Magasin {
     private Connection conn;
 
-    public Magasin(Connection conn) {
+    public Magasin(Connection conn) throws SQLException {
         this.conn = conn;
         createTablesIfNeeded();
     }
 
-    public static Magasin create(String path) {
-        String url = "jdbc:sqlite:C:/sqlite/db/" + path;
-
-        conn = DriverManager.getConnection(url);
-        return new Magasin(conn);
-    }
-
-    public static Magasin connect(String path) {
+    public static Magasin create(String path) throws SQLException {
         String url = "jdbc:sqlite:C:/sqlite/db/" + path;
 
         Connection conn = DriverManager.getConnection(url);
         return new Magasin(conn);
     }
 
-    public void close() {
+    public static Magasin connect(String path) throws SQLException {
+        String url = "jdbc:sqlite:C:/sqlite/db/" + path;
+
+        Connection conn = DriverManager.getConnection(url);
+        return new Magasin(conn);
+    }
+
+    public void close() throws SQLException {
         if (conn != null) {
             conn.close();
         }
     }
 
-    private void createTablesIfNeeded() {
+    private void createTablesIfNeeded() throws SQLException {
         String sql = ""
             + "CREATE TABLE IF NOT EXISTS employes (id INTEGER PRIMARY KEY AUTO_INCREMENT, nom TEXT NOT NULL, prenom TEXT NOT NULL, role TEXT NOT NULL, salaire DECIMAL(10, 10) NOT NULL);\n"
             + "CREATE TABLE IF NOT EXISTS clients (id INTEGER PRIMARY KEY AUTO_INCREMENT, nom TEXT NOT NULL, prenom TEXT NOT NULL, email TEXT NOT NULL);\n"

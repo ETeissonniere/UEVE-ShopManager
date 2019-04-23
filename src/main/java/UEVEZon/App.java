@@ -3,19 +3,28 @@
  */
 package UEVEZon;
 
+import java.io.File;
+
+import UEVEZon.models.Magasin;
+
 public class App {
-    private String DB_PATH = "uevezon.db";
+    private static String DB_PATH = "uevezon.db";
 
     public static void main(String[] args) {
         Magasin mag;
 
         File f = new File(DB_PATH);
-        if(f.exists() && !f.isDirectory()) {
-            mag = Magasin.connect(DB_PATH);
-        } else {
-            mag = Magasin.create(DB_PATH);
-        }
 
-        mag.close();
+        try {
+            if(f.exists() && !f.isDirectory()) {
+                mag = Magasin.connect(DB_PATH);
+            } else {
+                mag = Magasin.create(DB_PATH);
+            }
+
+            mag.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

@@ -26,6 +26,9 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation("junit:junit:4.12")
+
+    // JDBC: SQLite driver
+    compile("org.xerial", "sqlite-jdbc", "3.27.2.1")
 }
 
 application {
