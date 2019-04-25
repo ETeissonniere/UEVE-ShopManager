@@ -32,12 +32,12 @@ public class Magasin {
 
     private void createTablesIfNeeded() throws SQLException {
         String sql = ""
-            + "CREATE TABLE IF NOT EXISTS employes (id INTEGER PRIMARY KEY AUTO_INCREMENT, nom TEXT NOT NULL, prenom TEXT NOT NULL, role TEXT NOT NULL, salaire DECIMAL(10, 10) NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS clients (id INTEGER PRIMARY KEY AUTO_INCREMENT, nom TEXT NOT NULL, prenom TEXT NOT NULL, email TEXT NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS gammes (id INTEGER PRIMARY KEY AUTO_INCREMENT, codeBarre TEXT NOT NULL, prix DECIMAL(10, 5) NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS produits (id INTEGER PRIMARY KEY AUTO_INCREMENT, dateEntree TEXT NOT NULL, numSerie TEXT NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS fournisseurs (id INTEGER PRIMARY KEY AUTO_INCREMENT, siret TEXT NOT NULL, nom TEXT NOT NULL, addr TEXT NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS paniers (id INTEGER PRIMARY KEY AUTO_INCREMENT, datePaiement TEXT, dateReception TEXT, etat TEXT NOT NULL, valeur DECIMAL(10, 10) NOT NULL);";
+            + "CREATE TABLE IF NOT EXISTS employes (id INTEGER PRIMARY KEY AUTOINCREMENT, nom TEXT NOT NULL, prenom TEXT NOT NULL, role TEXT NOT NULL, salaire DECIMAL(10, 10) NOT NULL);\n"
+            + "CREATE TABLE IF NOT EXISTS clients (id INTEGER PRIMARY KEY AUTOINCREMENT, nom TEXT NOT NULL, prenom TEXT NOT NULL, email TEXT NOT NULL);\n"
+            + "CREATE TABLE IF NOT EXISTS gammes (id INTEGER PRIMARY KEY AUTOINCREMENT, codeBarre TEXT NOT NULL, prix DECIMAL(10, 5) NOT NULL);\n"
+            + "CREATE TABLE IF NOT EXISTS produits (id INTEGER PRIMARY KEY AUTOINCREMENT, dateEntree TEXT NOT NULL, numSerie TEXT NOT NULL);\n"
+            + "CREATE TABLE IF NOT EXISTS fournisseurs (id INTEGER PRIMARY KEY AUTOINCREMENT, siret TEXT NOT NULL, nom TEXT NOT NULL, addr TEXT NOT NULL);\n"
+            + "CREATE TABLE IF NOT EXISTS paniers (id INTEGER PRIMARY KEY AUTOINCREMENT, datePaiement TEXT, dateReception TEXT, etat TEXT NOT NULL, valeur DECIMAL(10, 10) NOT NULL);";
 
         Statement stmt = conn.createStatement();
         stmt.execute(sql);
