@@ -11,14 +11,14 @@ public class Magasin {
     }
 
     public static Magasin create(String path) throws SQLException {
-        String url = "jdbc:sqlite:C:/sqlite/db/" + path;
+        String url = "jdbc:sqlite:" + path;
 
         Connection conn = DriverManager.getConnection(url);
         return new Magasin(conn);
     }
 
     public static Magasin connect(String path) throws SQLException {
-        String url = "jdbc:sqlite:C:/sqlite/db/" + path;
+        String url = "jdbc:sqlite:" + path;
 
         Connection conn = DriverManager.getConnection(url);
         return new Magasin(conn);
