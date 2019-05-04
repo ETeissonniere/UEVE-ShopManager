@@ -1,3 +1,5 @@
+package UEVEZon.models;
+
 public class Employe extends Personne {
     public Double salaire;
     public String role;

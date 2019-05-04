@@ -1,3 +1,5 @@
+package UEVEZon.models;
+
 public class Client extends Personne {
     public String mail;
 

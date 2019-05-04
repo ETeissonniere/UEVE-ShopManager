@@ -1,45 +1,29 @@
 package UEVEZon.models;
 
-import java.sql.*;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 public class Magasin {
-    private Connection conn;
+	public List<Employe> employes;
+	public Map<String, Gamme> gammes;
 
-    public Magasin(Connection conn) throws SQLException {
-        this.conn = conn;
-        createTablesIfNeeded();
-    }
+	public Magasin() {
+		this.employes = new ArrayList<Employe>();
+		this.gammes = new HashMap<String, Gamme>();
+	}
 
-    public static Magasin create(String path) throws SQLException {
-        String url = "jdbc:sqlite:" + path;
+	public void engage(Employe e) {
+		this.employes.add(e);
+	}
 
-        Connection conn = DriverManager.getConnection(url);
-        return new Magasin(conn);
-    }
+	public void vend(String nom, Gamme g) {
+		this.gammes.put(nom, g);
+	}
 
-    public static Magasin connect(String path) throws SQLException {
-        String url = "jdbc:sqlite:" + path;
-
-        Connection conn = DriverManager.getConnection(url);
-        return new Magasin(conn);
-    }
-
-    public void close() throws SQLException {
-        if (conn != null) {
-            conn.close();
-        }
-    }
-
-    private void createTablesIfNeeded() throws SQLException {
-        String sql = ""
-            + "CREATE TABLE IF NOT EXISTS employes (id INTEGER PRIMARY KEY AUTOINCREMENT, nom TEXT NOT NULL, prenom TEXT NOT NULL, role TEXT NOT NULL, salaire DECIMAL(10, 10) NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS clients (id INTEGER PRIMARY KEY AUTOINCREMENT, nom TEXT NOT NULL, prenom TEXT NOT NULL, email TEXT NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS gammes (id INTEGER PRIMARY KEY AUTOINCREMENT, codeBarre TEXT NOT NULL, prix DECIMAL(10, 5) NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS produits (id INTEGER PRIMARY KEY AUTOINCREMENT, dateEntree TEXT NOT NULL, numSerie TEXT NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS fournisseurs (id INTEGER PRIMARY KEY AUTOINCREMENT, siret TEXT NOT NULL, nom TEXT NOT NULL, addr TEXT NOT NULL);\n"
-            + "CREATE TABLE IF NOT EXISTS paniers (id INTEGER PRIMARY KEY AUTOINCREMENT, datePaiement TEXT, dateReception TEXT, etat TEXT NOT NULL, valeur DECIMAL(10, 10) NOT NULL);";
-
-        Statement stmt = conn.createStatement();
-        stmt.execute(sql);
-    }
+	public List<Produit> achete(Client acheteur, String gamme, Integer quantite) {
+		// TODO: enregistre acheteur pour stats
+		return gammes.get(gamme).achete(quantite);
+	}
 }
