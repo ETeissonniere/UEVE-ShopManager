@@ -1,3 +1,5 @@
+package UEVEZon.models;
+
 public class Fournisseur {
     public String siret;
     public String nom;

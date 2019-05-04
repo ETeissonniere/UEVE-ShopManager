@@ -1,3 +1,5 @@
+package UEVEZon.models;
+
 public class Personne {
     public String nom;
     public String prenom;

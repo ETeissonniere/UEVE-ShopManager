@@ -1,3 +1,5 @@
+package UEVEZon.models;
+
 import java.util.Date;
 
 public class Produit {
