@@ -1,14 +1,9 @@
 # UEVEZon
 
-## Dépendances
-
-1. Installer [gradle](https://gradle.org/).
-
-
 ## Tests
 
 ```
-$ gradle test
+$ ./gradlew test
 ```
 
 
@@ -16,7 +11,7 @@ $ gradle test
 
 
 ```
-$ gradle build
+$ ./gradlew build
 ```
 
 > Le résultat de la compilation se trouve dans `./build/distributions/`, il faut cliquer sur un des scripts (suivant la plateform utilisée)
