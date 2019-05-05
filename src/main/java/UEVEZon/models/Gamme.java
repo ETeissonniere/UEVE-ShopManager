@@ -4,13 +4,13 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Gamme {
-    public Integer codeBarre;
-    public Double prix;
-    public Double tva;
+    public int codeBarre;
+    public double prix;
+    public double tva;
 
     public List<Produit> stock;
 
-    public Gamme(Integer codeBarre, Double prix, Double tva) {
+    public Gamme(int codeBarre, double prix, double tva) {
         this.codeBarre = codeBarre;
         this.prix = prix;
         this.tva = tva;
@@ -20,9 +20,10 @@ public class Gamme {
 
     public void enregistre(Produit p) {
         stock.add(p);
+        p.setPrix(this.prix);
     }
 
-    public List<Produit> achete(Integer quantite) {
+    public List<Produit> achete(int quantite) {
         if (quantite > stock.size()) {
             throw new IllegalArgumentException("pas assez de stock");
         }

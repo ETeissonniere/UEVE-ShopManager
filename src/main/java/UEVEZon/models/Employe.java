@@ -1,10 +1,10 @@
 package UEVEZon.models;
 
 public class Employe extends Personne {
-    public Double salaire;
+    public double salaire;
     public String role;
 
-    public Employe(String nom, String prenom, Double salaire, String role) {
+    public Employe(String nom, String prenom, double salaire, String role) {
         super(nom, prenom);
 
         this.salaire = salaire;

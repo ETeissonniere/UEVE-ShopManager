@@ -18,12 +18,21 @@ public class Magasin {
 		this.employes.add(e);
 	}
 
+	public void licensie(Employe e) {
+		this.employes.remove(e);
+	}
+
+	public void licensie(int id) {
+		this.employes.remove(id);
+	}
+
 	public void vend(String nom, Gamme g) {
 		this.gammes.put(nom, g);
 	}
 
-	public List<Produit> achete(Client acheteur, String gamme, Integer quantite) {
+	public List<Produit> achete(Client acheteur, Employe vendeur, String gamme, int quantite) {
 		// TODO: enregistre acheteur pour stats
+		// TODO: enregistre vendeur pour stats
 		return gammes.get(gamme).achete(quantite);
 	}
 }
