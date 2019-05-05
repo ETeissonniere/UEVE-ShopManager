@@ -10,6 +10,8 @@ public class Gamme {
 
     public List<Produit> stock;
 
+    GammeListener listener;
+
     public Gamme(int codeBarre, double prix, double tva) {
         this.codeBarre = codeBarre;
         this.prix = prix;
@@ -18,9 +20,17 @@ public class Gamme {
         this.stock = new ArrayList<Produit>();
     }
 
+    public void setListener(GammeListener listener) {
+        this.listener = listener;
+    }
+
     public void enregistre(Produit p) {
         stock.add(p);
         p.setPrix(this.prix);
+
+        if (listener != null) {
+            listener.onGammeEnregistre(p);
+        }
     }
 
     public List<Produit> achete(int quantite) {

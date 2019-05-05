@@ -69,4 +69,15 @@ public class MagasinTest {
 		List<Produit> achats = mag.achete(new Client("", "", ""), new Employe("", "", 0.0, ""), "mock", 1);
 		assertEquals(achats.get(0).serie, 1);
 	}
+
+	@Test public void testSetListener() {
+		Magasin mag = new Magasin();
+
+		assertNull(mag.listener);
+
+		StatisticsListener listener = new StatisticsListener();
+		mag.setListener(listener);
+
+		assertEquals(mag.listener, listener);
+	}
 }

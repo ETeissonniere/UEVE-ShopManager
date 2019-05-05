@@ -36,4 +36,15 @@ public class GammeTest {
 		// Juste au cas où
 		throw new RuntimeException();
 	}
+
+	@Test public void testSetListener() {
+		Gamme g = new Gamme(3546, 100.0, 0.2);
+
+		assertNull(g.listener);
+
+		StatisticsListener listener = new StatisticsListener();
+		g.setListener(listener);
+
+		assertEquals(g.listener, listener);
+	}
 }
