@@ -4,6 +4,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.List;
 
+import UEVEZon.controllers.StatisticsListener;
+
 public class MagasinTest {
 	@Test public void testEngage() {
 		Magasin mag = new Magasin();
