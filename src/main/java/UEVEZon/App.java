@@ -20,7 +20,7 @@ public class App {
     	pcs.enregistre(new Produit(5678));
     	pcs.enregistre(new Produit(2345));
 
-    	Gamme macbooks = new Gamme(23456, 1500.0, 0.2);
+    	Gamme macbooks = new Gamme(42424242, 1500.0, 0.2);
     	macbooks.setListener(stats);
     	macbooks.enregistre(new Produit(5618));
     	macbooks.enregistre(new Produit(2315));
