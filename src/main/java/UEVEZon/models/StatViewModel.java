@@ -4,7 +4,7 @@ import javax.swing.table.*;
 import UEVEZon.controllers.*;
 
 public class StatViewModel extends AbstractTableModel {
-    String[] nomColonnes = {"Type", "Nombre", "Valeur"};
+    String[] nomColonnes = {"Type", "Nombre"};
     String[] firstColumn = {"Employe", "Gamme en vente", "Achats", "Ventes", "Produits", "Valeur totale magasin"};
     StatisticsListener stats;
 
