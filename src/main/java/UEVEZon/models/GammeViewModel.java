@@ -47,6 +47,15 @@ public class GammeViewModel extends AbstractTableModel {
 		return false;
 	}
 
+	public void refresh() {
+		// Le problème des Map c'est que les changements ne sont pas forcément opérés ligne par ligne,
+		// on peut avoir des choses insérées au milieu, au début... On doit donc tout recharger pour
+		// être sur d'avoir une représentation correcte.
+
+		fireTableDataChanged();
+		fireTableStructureChanged();
+	}
+
 	/*public void removeRow(int row) {
 		magasin.licensie(row);
 		fireTableRowsDeleted(row, row);
