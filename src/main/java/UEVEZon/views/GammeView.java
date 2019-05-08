@@ -19,12 +19,6 @@ public class GammeView extends JPanel {
 		controls.add(buildAjouterGamme(table, mag));
 		controls.add(buildAjouterProduit(table, mag));
 
-		// Ajoute un produit
-		// Ajoute une gamme
-		// Supprime une gamme
-		//controls.add(buildLicensierButton(table));
-		//controls.add(buildEngagerButton(this, table));
-
 		add(controls, BorderLayout.PAGE_START);
 		add(scroller, BorderLayout.CENTER);
 	}
