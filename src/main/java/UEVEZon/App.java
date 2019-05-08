@@ -28,7 +28,7 @@ public class App {
     	mag.vend("PCs moyen", pcs);
     	mag.vend("Apple MacBooks", macbooks);
 
-    	MainView window = new MainView(mag);
+    	MainView window = new MainView(mag, stats);
     	window.show();
     }
 }

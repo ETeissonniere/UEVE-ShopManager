@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.table.*;
 import java.util.ArrayList;
 import UEVEZon.models.*;
-import UEVEZon.controllers.*;
+import UEVEZon.controllers.StatisticsListener;
 
 public class StatView extends JPanel {
     public StatView(StatisticsListener stats){
