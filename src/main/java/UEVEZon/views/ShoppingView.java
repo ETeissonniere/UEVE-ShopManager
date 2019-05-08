@@ -13,7 +13,7 @@ public class ShoppingView extends JPanel {
 	public ShoppingView(Magasin mag, StatisticsListener stats) {
 		super(new BorderLayout());
 
-		JTable table = new JTable(new GammeViewModel(mag, stats));
+		JTable table = new JTable(new GammeViewModel(mag, stats, true));
 		JScrollPane scroller = new JScrollPane(table);
 
 		JPanel controls = new JPanel();
