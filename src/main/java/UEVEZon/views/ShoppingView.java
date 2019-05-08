@@ -112,6 +112,12 @@ public class ShoppingView extends JPanel {
 	}
 
 	private void recapPanier(Panier p) {
-		// TODO
+		String recap = String.format(
+			"Vous avez acheté %d produits pour une valeur totale de %g €.\nAu plaisir de vous revoir.",
+			p.achats.size(),
+			p.valeur()
+		);
+
+		JOptionPane.showMessageDialog(null, recap, "Reçu", JOptionPane.INFORMATION_MESSAGE);
 	}
 }
