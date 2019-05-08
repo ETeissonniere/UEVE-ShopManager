@@ -11,6 +11,11 @@ public class Produit {
         this.serie = identifiantProduit;
     }
 
+    public Produit(int identifiantProduit, double prix) {
+    	this.serie = identifiantProduit;
+    	this.prix = prix;
+    }
+
     public void setPrix(double prix) {
     	this.prix = prix;
     }
