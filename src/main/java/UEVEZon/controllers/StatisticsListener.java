@@ -17,6 +17,7 @@ public class StatisticsListener implements MagasinListener, GammeListener {
 	public int nombreAchats;
 	public int nombreVentes;
 	public int nombreProduitsEnregistre;
+    public double valeurTotaleGammeVendu;
 	public double valeurTotaleMagasin;
 
 	public StatisticsListener() {

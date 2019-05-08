@@ -2,13 +2,16 @@ package UEVEZon.models;
 
 import javax.swing.table.*;
 import java.util.ArrayList;
+import UEVEZon.controllers.*;
 
 public class GammeViewModel extends AbstractTableModel {
-	String[] nomColonnes = {"Nom", "Code barre", "Prix", "TVA", "Quantité disponible"};
+	String[] nomColonnes = {"Nom", "Code barre", "Prix", "TVA", "Quantité disponible", "Nombre de vente", "Valeur totale vendue"};
 	Magasin magasin;
+    StatisticsListener statistiques;
 
-	public GammeViewModel(Magasin mag) {
+	public GammeViewModel(Magasin mag, StatisticsListener stats) {
 		magasin = mag;
+        statistiques = stats;
 	}
 
 	public String getColumnName(int col) {
@@ -38,6 +41,10 @@ public class GammeViewModel extends AbstractTableModel {
 				return magasin.gammes.get(gammeKey).tva;
 			case 4:
 				return magasin.gammes.get(gammeKey).stock.size();
+            //case 5:
+               // return statistiques.ventesGamme.get(magasin.gammes.get(row));
+            //case 6:
+              //  return statistiques.ventesGamme.get(gammeKey) * magasin.gammes.get(row).prix;
 			default:
 				return null;
 		}

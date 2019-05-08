@@ -11,7 +11,7 @@ public class MainView {
 	public MainView(Magasin mag, StatisticsListener stats) {
 		JTabbedPane tabs = new JTabbedPane();
 		tabs.add("Employes", new EmployeView(mag, stats));
-		tabs.add("Gammes", new GammeView(mag));
+		tabs.add("Gammes", new GammeView(mag, stats));
 		tabs.add("Statistiques", new StatView(stats));
 		tabs.add("Faire des achats", new JPanel());
 

@@ -7,12 +7,13 @@ import javax.swing.*;
 import javax.swing.table.*;
 import java.util.ArrayList;
 import UEVEZon.models.*;
+import UEVEZon.controllers.*;
 
 public class GammeView extends JPanel {
-	public GammeView(Magasin mag) {
+	public GammeView(Magasin mag, StatisticsListener stats) {
 		super(new BorderLayout());
 
-		JTable table = new JTable(new GammeViewModel(mag));
+		JTable table = new JTable(new GammeViewModel(mag, stats));
 		JScrollPane scroller = new JScrollPane(table);
 
 		JPanel controls = new JPanel();
