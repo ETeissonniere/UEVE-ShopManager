@@ -13,7 +13,7 @@ public class MainView {
 		tabs.add("Employes", new EmployeView(mag, stats));
 		tabs.add("Gammes", new GammeView(mag, stats));
 		tabs.add("Statistiques", new StatView(stats));
-		tabs.add("Faire des achats", new JPanel());
+		tabs.add("Faire des achats", new ShoppingView(mag, stats));
 
 		window = new JFrame();
 		window.setSize(1200, 800);
