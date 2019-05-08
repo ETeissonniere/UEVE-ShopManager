@@ -16,6 +16,7 @@ public class MainView {
 		tabs.add("Faire des achats", new ShoppingView(mag, stats));
 
 		window = new JFrame();
+        window.setTitle("UEVEZon");
 		window.setSize(1200, 800);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.getContentPane().setLayout(new GridLayout(1, 1));
