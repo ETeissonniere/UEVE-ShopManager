@@ -1,5 +1,14 @@
 # UEVEZon
 
+## Lancement
+
+> Il est possible de lancer le projet via `gradle` qui le compilera si besoin sans avoir besoin de passer par une phase de packaging.
+
+```
+$ ./gradlew run
+```
+
+
 ## Tests
 
 ```
