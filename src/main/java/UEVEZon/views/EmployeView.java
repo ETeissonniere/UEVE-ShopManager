@@ -6,12 +6,13 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.table.*;
 import UEVEZon.models.*;
+import UEVEZon.controllers.*;
 
 public class EmployeView extends JPanel {
-	public EmployeView(Magasin mag) {
+	public EmployeView(Magasin mag, StatisticsListener stats) {
 		super(new BorderLayout());
 
-		JTable table = new JTable(new EmployeViewModel(mag));
+		JTable table = new JTable(new EmployeViewModel(mag, stats));
 		JScrollPane scroller = new JScrollPane(table);
 
 		JPanel controls = new JPanel();

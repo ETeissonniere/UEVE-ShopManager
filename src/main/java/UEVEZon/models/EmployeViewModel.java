@@ -1,13 +1,16 @@
 package UEVEZon.models;
 
 import javax.swing.table.*;
+import UEVEZon.controllers.*;
 
 public class EmployeViewModel extends AbstractTableModel {
-	String[] nomColonnes = {"Nom", "Prenom", "Salaire", "Role"};
+	String[] nomColonnes = {"Nom", "Prenom", "Salaire", "Role", "Nombre de vente", "Valeur des ventes"};
 	Magasin magasin;
+    StatisticsListener statistiques;
 
-	public EmployeViewModel(Magasin mag) {
+	public EmployeViewModel(Magasin mag, StatisticsListener stats) {
 		magasin = mag;
+        statistiques = stats;
 	}
 
 	public String getColumnName(int col) {
@@ -32,6 +35,10 @@ public class EmployeViewModel extends AbstractTableModel {
 				return magasin.employes.get(row).salaire;
 			case 3:
 				return magasin.employes.get(row).role;
+            case 4:
+                return statistiques.ventes.get(magasin.employes.get(row));
+            case 5:
+                return statistiques.valeurVendue.get(magasin.employes.get(row));
 			default:
 				return null;
 		}
