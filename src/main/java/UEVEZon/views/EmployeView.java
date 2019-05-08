@@ -40,17 +40,17 @@ public class EmployeView extends JPanel {
 		JButton engager = new JButton("Engager");
 		engager.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String nom = JOptionPane.showInputDialog(window, "Choisissez le nom du nouvel employé", "Nom", JOptionPane.QUESTION_MESSAGE);
+				String nom = JOptionPane.showInputDialog(null, "Choisissez le nom du nouvel employé", "Nom", JOptionPane.QUESTION_MESSAGE);
 				if (nom == null || nom.length() == 0) {
 					return;
 				}
 
-				String prenom = JOptionPane.showInputDialog(window, "Choisissez le prénom du nouvel employé", "Prenom", JOptionPane.QUESTION_MESSAGE);
+				String prenom = JOptionPane.showInputDialog(null, "Choisissez le prénom du nouvel employé", "Prenom", JOptionPane.QUESTION_MESSAGE);
 				if (prenom == null || prenom.length() == 0) {
 					return;
 				}
 
-				String role = JOptionPane.showInputDialog(window, "Choisissez le role du nouvel employé", "Role", JOptionPane.QUESTION_MESSAGE);
+				String role = JOptionPane.showInputDialog(null, "Choisissez le role du nouvel employé", "Role", JOptionPane.QUESTION_MESSAGE);
 				if (role == null || role.length() == 0) {
 					return;
 				}
@@ -58,7 +58,7 @@ public class EmployeView extends JPanel {
 				double salaire = 0.0;
 
 				do {
-					String salaireStr = JOptionPane.showInputDialog(window, "Choisissez le salaire du nouvel employé", "Salaire", JOptionPane.QUESTION_MESSAGE);
+					String salaireStr = JOptionPane.showInputDialog(null, "Choisissez le salaire du nouvel employé", "Salaire", JOptionPane.QUESTION_MESSAGE);
 					if (salaireStr == null || salaireStr.length() == 0) {
 						return;
 					}

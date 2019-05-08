@@ -10,8 +10,14 @@ import UEVEZon.models.*;
 import UEVEZon.controllers.*;
 
 public class GammeView extends JPanel {
+	Magasin mag;
+	StatisticsListener stats;
+
 	public GammeView(Magasin mag, StatisticsListener stats) {
 		super(new BorderLayout());
+
+		this.mag = mag;
+		this.stats = stats;
 
 		JTable table = new JTable(new GammeViewModel(mag, stats));
 		JScrollPane scroller = new JScrollPane(table);
@@ -32,7 +38,7 @@ public class GammeView extends JPanel {
 					int numSerie = -1;
 
 					do {
-						String numSerieStr = JOptionPane.showInputDialog(table, "Indiquez le numéro de série du nouveau produit", "Numéro de série", JOptionPane.QUESTION_MESSAGE);
+						String numSerieStr = JOptionPane.showInputDialog(null, "Indiquez le numéro de série du nouveau produit", "Numéro de série", JOptionPane.QUESTION_MESSAGE);
 						if (numSerieStr == null || numSerieStr.length() == 0) {
 							return;
 						}
@@ -67,14 +73,14 @@ public class GammeView extends JPanel {
 				double prix = 0.0;
 
 				do {
-					nom = JOptionPane.showInputDialog(table, "Indiquez le nom de la gamme (doit être unique)", "Nom", JOptionPane.QUESTION_MESSAGE);
+					nom = JOptionPane.showInputDialog(null, "Indiquez le nom de la gamme (doit être unique)", "Nom", JOptionPane.QUESTION_MESSAGE);
 					if (nom == null || nom.length() == 0) {
 						return;
 					}
 				} while (nom.length() == 0 || mag.gammes.containsKey(nom));
 
 				do {
-					codeBarreStr = JOptionPane.showInputDialog(table, "Code barre de la gamme de produits", "Code barre", JOptionPane.QUESTION_MESSAGE);
+					codeBarreStr = JOptionPane.showInputDialog(null, "Code barre de la gamme de produits", "Code barre", JOptionPane.QUESTION_MESSAGE);
 					if (codeBarreStr == null || codeBarreStr.length() == 0) {
 						return;
 					}
@@ -87,7 +93,7 @@ public class GammeView extends JPanel {
 				} while (codeBarre <= 0);
 
 				do {
-					prixStr = JOptionPane.showInputDialog(table, "Prix des produits de la gamme", "Prix", JOptionPane.QUESTION_MESSAGE);
+					prixStr = JOptionPane.showInputDialog(null, "Prix des produits de la gamme", "Prix", JOptionPane.QUESTION_MESSAGE);
 					if (prixStr == null || prixStr.length() == 0) {
 						return;
 					}

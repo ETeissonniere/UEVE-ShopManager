@@ -10,24 +10,20 @@ import UEVEZon.models.*;
 import UEVEZon.controllers.*;
 
 public class ShoppingView extends JPanel {
-	Magasin mag;
-
 	public ShoppingView(Magasin mag, StatisticsListener stats) {
 		super(new BorderLayout());
-
-		this.mag = mag;
 
 		JTable table = new JTable(new GammeViewModel(mag, stats));
 		JScrollPane scroller = new JScrollPane(table);
 
 		JPanel controls = new JPanel();
-		controls.add(buildAjouterButton(table));
+		controls.add(buildAjouterButton(table, mag));
 
 		add(controls, BorderLayout.PAGE_START);
 		add(scroller, BorderLayout.CENTER);
 	}
 
-	private JButton buildAjouterButton(JTable table) {
+	private JButton buildAjouterButton(JTable table, Magasin mag) {
 		JButton ajouter = new JButton("Acheter");
 		ajouter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -38,7 +34,7 @@ public class ShoppingView extends JPanel {
 					int quantite = 0;
 
 					do {
-						String quantiteStr = JOptionPane.showInputDialog(table, "Quelle quantité souhaitez vous ?", "Quantité", JOptionPane.QUESTION_MESSAGE);
+						String quantiteStr = JOptionPane.showInputDialog(null, "Quelle quantité souhaitez vous ?", "Quantité", JOptionPane.QUESTION_MESSAGE);
 						if (quantiteStr == null || quantiteStr.length() == 0) {
 							return;
 						}
@@ -55,7 +51,7 @@ public class ShoppingView extends JPanel {
 						return;
 					}
 
-					Employe vendeur = askVendeur();
+					Employe vendeur = askVendeur(mag);
 					if (vendeur == null) {
 						return;
 					}
@@ -71,17 +67,17 @@ public class ShoppingView extends JPanel {
 	}
 
 	private Client askAcheteur() {
-		String nom = JOptionPane.showInputDialog(this, "Quel est votre nom ?", "Nom", JOptionPane.QUESTION_MESSAGE);
+		String nom = JOptionPane.showInputDialog(null, "Quel est votre nom ?", "Nom", JOptionPane.QUESTION_MESSAGE);
 		if (nom == null || nom.length() == 0) {
 			return null;
 		}
 
-		String prenom = JOptionPane.showInputDialog(this, "Quel est votre prénom ?", "Prénom", JOptionPane.QUESTION_MESSAGE);
+		String prenom = JOptionPane.showInputDialog(null, "Quel est votre prénom ?", "Prénom", JOptionPane.QUESTION_MESSAGE);
 		if (prenom == null || prenom.length() == 0) {
 			return null;
 		}
 
-		String mail = JOptionPane.showInputDialog(this, "Quel est votre adresse mail ?", "Mail", JOptionPane.QUESTION_MESSAGE);
+		String mail = JOptionPane.showInputDialog(null, "Quel est votre adresse mail ?", "Mail", JOptionPane.QUESTION_MESSAGE);
 		if (mail == null || mail.length() == 0) {
 			return null;
 		}
@@ -89,7 +85,7 @@ public class ShoppingView extends JPanel {
 		return new Client(nom, prenom, mail);
 	}
 
-	private Employe askVendeur() {
+	private Employe askVendeur(Magasin mag) {
 		ArrayList<String> choices = new ArrayList<String>();
 
 		Iterator iterator = mag.employes.iterator();
