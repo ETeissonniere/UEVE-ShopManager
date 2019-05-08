@@ -3,7 +3,7 @@ package UEVEZon.models;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class Magasin {
 	public List<Employe> employes;
@@ -13,7 +13,7 @@ public class Magasin {
 
 	public Magasin() {
 		this.employes = new ArrayList<Employe>();
-		this.gammes = new HashMap<String, Gamme>();
+		this.gammes = new LinkedHashMap<String, Gamme>();
 	}
 
 	public void setListener(MagasinListener listener) {
