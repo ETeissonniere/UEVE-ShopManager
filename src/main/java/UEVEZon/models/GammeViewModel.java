@@ -41,10 +41,10 @@ public class GammeViewModel extends AbstractTableModel {
 				return magasin.gammes.get(gammeKey).tva;
 			case 4:
 				return magasin.gammes.get(gammeKey).stock.size();
-            //case 5:
-               // return statistiques.ventesGamme.get(magasin.gammes.get(row));
-            //case 6:
-              //  return statistiques.ventesGamme.get(gammeKey) * magasin.gammes.get(row).prix;
+            case 5:
+                return statistiques.ventesGamme.getOrDefault(gammeKey, 0);
+            case 6:
+                return statistiques.ventesGamme.getOrDefault(gammeKey, 0) * magasin.gammes.get(gammeKey).prix;
 			default:
 				return null;
 		}
