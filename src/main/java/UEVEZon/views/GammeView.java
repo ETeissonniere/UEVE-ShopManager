@@ -10,14 +10,8 @@ import UEVEZon.models.*;
 import UEVEZon.controllers.*;
 
 public class GammeView extends JPanel {
-	Magasin mag;
-	StatisticsListener stats;
-
 	public GammeView(Magasin mag, StatisticsListener stats) {
 		super(new BorderLayout());
-
-		this.mag = mag;
-		this.stats = stats;
 
 		JTable table = new JTable(new GammeViewModel(mag, stats));
 		JScrollPane scroller = new JScrollPane(table);
