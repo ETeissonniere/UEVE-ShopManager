@@ -68,8 +68,8 @@ public class MagasinTest {
 		g.enregistre(new Produit(1));
 
 		mag.vend("mock", g);
-		List<Produit> achats = mag.achete(new Client("", "", ""), new Employe("", "", 0.0, ""), "mock", 1);
-		assertEquals(achats.get(0).serie, 1);
+		Panier p = mag.achete(new Client("", "", ""), new Employe("", "", 0.0, ""), "mock", 1);
+		assertEquals(p.achats.get(0).serie, 1);
 	}
 
 	@Test public void testSetListener() {

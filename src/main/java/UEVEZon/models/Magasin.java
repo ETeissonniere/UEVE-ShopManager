@@ -48,13 +48,14 @@ public class Magasin {
 		}
 	}
 
-	public List<Produit> achete(Client acheteur, Employe vendeur, String gamme, int quantite) {
-		List<Produit> achats = gammes.get(gamme).achete(quantite);
+	public Panier achete(Client acheteur, Employe vendeur, String gamme, int quantite) {
+		Panier p = new Panier();
+		p.ajoute(gammes.get(gamme).achete(quantite));
 
 		if (listener != null) {
-			listener.onMagasinAchete(acheteur, vendeur, gamme, achats);
+			listener.onMagasinAchete(acheteur, vendeur, gamme, p);
 		}
 
-		return achats;
+		return p;
 	}
 }
