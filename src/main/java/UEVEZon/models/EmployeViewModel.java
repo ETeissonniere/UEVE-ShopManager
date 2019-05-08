@@ -45,4 +45,9 @@ public class EmployeViewModel extends AbstractTableModel {
 		magasin.licensie(row);
 		fireTableRowsDeleted(row, row);
 	}
+
+	public void addRow(String nom, String prenom, String role, double salaire) {
+		magasin.engage(new Employe(nom, prenom, salaire, role));
+		fireTableRowsInserted(magasin.employes.size() - 1, magasin.employes.size() - 1);
+	}
 }
